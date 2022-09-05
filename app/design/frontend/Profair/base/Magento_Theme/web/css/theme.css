@@ -1,0 +1,12 @@
+.lozung {
+    width: 370px;
+    float: left;
+    margin-left: 40px;
+    font-size: 24px;
+    color: #424242;
+    line-height: 28px;
+    padding-top: 20px;
+    display: block;
+    text-transform: uppercase;
+    clear: none;
+}

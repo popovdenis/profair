@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magento_Theme::css/theme.css"/>
+    </head>
+    <body>
+        <referenceContainer name="header-wrapper">
+            <container name="profair-link-wrapper" label="Profair Link Wrapper" as="profair-link-wrapper"
+                       after="top.search" htmlTag="ul" htmlClass="profair wrapper">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="profair.title.link" before="-" template="Magento_Theme::header/link.phtml" />
+            </container>
+        </referenceContainer>
+
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="header.links" remove="true"/>
+        <referenceBlock name="my-account-link" remove="true"/>
+        <referenceBlock name="register-link" remove="true"/>
+        <referenceBlock name="authorization-link" remove="true"/>
+    </body>
+</page>

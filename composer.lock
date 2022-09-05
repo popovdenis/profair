@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "33542262089c32cadae8fecf67db39d6",
+    "content-hash": "b0f4e356e96de825c19ddf8dc4e4ab36",
     "packages": [
         {
             "name": "amzn/amazon-pay-and-login-magento-2-module",
@@ -10700,6 +10700,122 @@
             "time": "2020-12-02T21:12:59+00:00"
         },
         {
+            "name": "mageplaza/magento-2-polish-language-pack",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mageplaza/magento-2-polish-language-pack.git",
+                "reference": "163ccc60dcfe9cde544ff153149828b6bcccc04b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mageplaza/magento-2-polish-language-pack/zipball/163ccc60dcfe9cde544ff153149828b6bcccc04b",
+                "reference": "163ccc60dcfe9cde544ff153149828b6bcccc04b",
+                "shasum": ""
+            },
+            "require": {
+                "mageplaza/module-core": "^1.3.13"
+            },
+            "type": "magento2-language",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mageplaza team",
+                    "email": "hi@mageplaza.com",
+                    "homepage": "https://www.mageplaza.com",
+                    "role": "Leader"
+                }
+            ],
+            "description": "Polish language package for Magento 2",
+            "homepage": "https://www.mageplaza.com",
+            "time": "2022-02-22T09:04:53+00:00"
+        },
+        {
+            "name": "mageplaza/magento-2-russian-language-pack",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mageplaza/magento-2-russian-language-pack.git",
+                "reference": "ecd18c2a96adc11e8b7f6226b829aa12e47d2006"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mageplaza/magento-2-russian-language-pack/zipball/ecd18c2a96adc11e8b7f6226b829aa12e47d2006",
+                "reference": "ecd18c2a96adc11e8b7f6226b829aa12e47d2006",
+                "shasum": ""
+            },
+            "require": {
+                "mageplaza/module-core": "^1.3.13"
+            },
+            "type": "magento2-language",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mageplaza team",
+                    "email": "hi@mageplaza.com",
+                    "homepage": "https://www.mageplaza.com",
+                    "role": "Leader"
+                }
+            ],
+            "description": "Russian language package for Magento 2",
+            "homepage": "https://www.mageplaza.com",
+            "time": "2022-02-22T09:05:01+00:00"
+        },
+        {
+            "name": "mageplaza/module-core",
+            "version": "1.4.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mageplaza/module-core.git",
+                "reference": "85d1074fdee1259d438618c977ba6e21b76c4f39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mageplaza/module-core/zipball/85d1074fdee1259d438618c977ba6e21b76c4f39",
+                "reference": "85d1074fdee1259d438618c977ba6e21b76c4f39",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Mageplaza\\Core\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Mageplaza",
+                    "email": "support@mageplaza.com",
+                    "homepage": "https://www.mageplaza.com",
+                    "role": "Technical Support"
+                }
+            ],
+            "description": "Mageplaza Core for Magento 2",
+            "time": "2022-05-30T03:41:05+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.27.1",
             "source": {
@@ -20742,6 +20858,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "mageplaza/magento-2-polish-language-pack": 20,
+        "mageplaza/magento-2-russian-language-pack": 20,
         "phpmd/phpmd": 0
     },
     "prefer-stable": false,

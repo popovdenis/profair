@@ -13,7 +13,7 @@
     <body>
         <referenceContainer name="header-wrapper">
             <container name="profair-link-wrapper" label="Profair Link Wrapper" as="profair-link-wrapper"
-                       after="top.search" htmlTag="ul" htmlClass="profair wrapper">
+                       after="logo" htmlTag="div" htmlClass="profair wrapper">
                 <block class="Magento\Framework\View\Element\Template"
                        name="profair.title.link" before="-" template="Magento_Theme::header/link.phtml" />
             </container>

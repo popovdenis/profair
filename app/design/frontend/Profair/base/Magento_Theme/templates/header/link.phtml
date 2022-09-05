@@ -3,9 +3,21 @@
 
 use Magento\Framework\View\Element\Template;
 ?>
-<li class="item link profair">
+<div class="item link headTop">
     <div class="lozung">
         <?= $block->escapeHtml(__('ПРОДАЖА И МОНТАЖ')) ?><br />
         <?= $block->escapeHtml(__('КОНДИЦИОНЕРОВ')) ?>
     </div>
-</li>
+    <div class="rigthWrap">
+        <div class="phone">
+            <a href="tel:+375295390000">+375 29 <b>539 00 00</b></a>
+            <br>
+            <a href="tel:+375296792600">+375 29 <b>679 26 00</b></a>
+            <br>
+        </div>
+        <div class="zvonok">
+            <a href="/"><?= $block->escapeHtml(__('Make a call')) ?></a>
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+</div>

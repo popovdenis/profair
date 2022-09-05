@@ -1,4 +1,7 @@
-.lozung {
+.page-header .header.panel {
+    display: none;
+}
+.headTop .lozung {
     width: 370px;
     float: left;
     margin-left: 40px;
@@ -9,4 +12,26 @@
     display: block;
     text-transform: uppercase;
     clear: none;
+}
+.headTop .rigthWrap {
+    width: 370px;
+    float: right;
+    display: block;
+    overflow: hidden;
+}
+.headTop .rigthWrap .phone {
+    width: 100%;
+    text-align: right;
+    display: block;
+    padding: 6px 0 6px 0;
+    font-size: 22px;
+    color: #4d5864;
+    font-family: 'Impact';
+    overflow: hidden;
+    line-height: 26px;
+}
+.headTop .rigthWrap .zvonok {
+    width: 100%;
+    display: block;
+    clear: both;
 }

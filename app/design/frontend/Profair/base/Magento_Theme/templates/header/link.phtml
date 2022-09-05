@@ -5,15 +5,18 @@ use Magento\Framework\View\Element\Template;
 ?>
 <div class="item link headTop">
     <div class="lozung">
-        <?= $block->escapeHtml(__('ПРОДАЖА И МОНТАЖ')) ?><br />
-        <?= $block->escapeHtml(__('КОНДИЦИОНЕРОВ')) ?>
+        <?= $this->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId('logo_header_center')
+            ->toHtml(); ?>
     </div>
     <div class="rigthWrap">
         <div class="phone">
-            <a href="tel:+375295390000">+375 29 <b>539 00 00</b></a>
-            <br>
-            <a href="tel:+375296792600">+375 29 <b>679 26 00</b></a>
-            <br>
+            <?= $this->getLayout()
+                ->createBlock('Magento\Cms\Block\Block')
+                ->setBlockId('logo_header_phone')
+                ->toHtml();
+            ?>
         </div>
         <div class="zvonok">
             <a href="/"><?= $block->escapeHtml(__('Make a call')) ?></a>

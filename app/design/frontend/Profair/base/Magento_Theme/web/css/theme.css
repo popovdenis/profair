@@ -35,3 +35,22 @@
     display: block;
     clear: both;
 }
+.headTop .rigthWrap .zvonok a:hover {
+    background-position: 0 -64px;
+}
+.headTop .rigthWrap .zvonok a {
+    width: 161px;
+    height: 28px;
+    display: block;
+    float: right;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-family: 'Tahoma';
+    text-align: center;
+    line-height: 28px;
+    color: #5d5d5d;
+    text-decoration: none;
+    background: url('../images/zvonok.jpg') 0 -11px no-repeat;
+    border-radius: 5px;
+}

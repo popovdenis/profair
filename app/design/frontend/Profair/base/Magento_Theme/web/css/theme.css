@@ -1,3 +1,9 @@
+.clear {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 5px;
+}
 .page-header .header.panel {
     display: none;
 }
@@ -53,4 +59,647 @@
     text-decoration: none;
     background: url('../images/zvonok.jpg') 0 -11px no-repeat;
     border-radius: 5px;
+}
+.headTop .rigthWrap .phone a {
+    text-decoration: none;
+    color: #4d5864;
+}
+
+.headTop .rigthWrap .phone b, .headTop .rigthWrap .phone a b {
+    color: #8a8a8a;
+}
+
+.mlfShare2 {
+    background: url('../images/main_bg.jpg') 50% no-repeat;
+    margin-top: -100px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 1px 5px 0px rgba(50, 50, 50, 0.25);
+    margin-bottom: 5px;
+    width: 100%;
+    height: 625px;
+}
+.mlfCategory {
+    display: block;
+    width: 100%;
+    background: url('../images/main2_bg.jpg') 50% 0 no-repeat;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+.wrap980 {
+    width: 980px;
+    margin: auto;
+    display: block;
+    overflow: hidden;
+}
+.mlfCategory h3 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 46px;
+    color: #ffffff;
+    line-height: 58px;
+    background: url('../images/line.png') 50% 100% no-repeat;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.brands {
+    width: 100%;
+    border-spacing: 0;
+    margin-bottom: 20px;
+}
+.brands td {
+    width: 20%;
+    padding: 5px 20px;
+    text-align: center;
+}
+.brands td a {
+    display: table-cell;
+    height: 80px;
+    vertical-align: middle;
+    background: #ffffff;
+    width: 160px;
+    text-align: center;
+}
+a {
+    color: #0e4e84;
+    text-decoration: underline;
+    outline: none;
+}
+.brands td a img {
+    max-width: 150px;
+    height: auto;
+    line-height: 80px;
+}
+a img {
+    border: none;
+}
+.mlfWork {
+    width: 100%;
+    display: block;
+    background: url('../images/white.jpg') 50% 0px repeat;
+    overflow: hidden;
+}
+
+.mlfWork h3 {
+    color: #424242;
+    font-size: 48px;
+    text-transform: uppercase;
+    margin: 30px auto;
+    clear: both;
+    text-align: center;
+    background: url('../images/line2.png') 50% 100% no-repeat;
+    padding-bottom: 5px;
+    overflow: hidden;
+}
+
+.mlfWork .content {
+    width: 954px;
+    margin: 40px auto 20px auto;
+    overflow: hidden;
+}
+
+.mlfWork .content img {
+    display: block;
+    margin: auto;
+}
+
+.mlfWork .content p {
+    display: block;
+    width: 18%;
+    text-align: center;
+    float: left;
+    padding: 10px 1%;
+    color: #424242;
+    font-size: 18px;
+    font-weight: bold;
+}
+.mlfPreim p {
+    width: 100%;
+    padding: 20px 0;
+}
+.mlfPreim .wrap980 {
+    padding: 0;
+}
+.mlfPreim {
+    width: 100%;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.mlfPreim .wrap980 {
+    padding: 30px 0 30px 0;
+    overflow: hidden;
+}
+.mlfPreim p {
+    display: block;
+    width: 20%;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #343434;
+}
+.mlfPreim p img {
+    margin-bottom: 10px;
+}
+.mlfCategory {
+    display: block;
+    width: 100%;
+    background: url('../images/main2_bg.jpg') 50% 0px no-repeat;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.mlfCategory2 {
+    display: block;
+    width: 100%;
+    background: #6b6b6b;
+    overflow: hidden;
+    padding-bottom: 10px;
+}
+
+.mlfCategory h3 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 46px;
+    color: #ffffff;
+    line-height: 58px;
+    background: url('../images/line.png') 50% 100% no-repeat;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+.wrapSectionList {
+    display: block;
+    width: 100%;
+    clear: both;
+}
+.wrapSectionList .item {
+    width: 239px;
+    height: 255px;
+    padding: 3px;
+    display: block;
+    float: left;
+    margin-left: 56px;
+}
+.wrapSectionList .item a {
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    height: 95%;
+}
+.wrapSectionList .item a:hover {
+    box-shadow: 0px 0px 5px 0px rgba(45, 180, 237, 1);
+    opacity: 0.9;
+}
+
+.wrapSectionList .item .image {
+    background: #e8e8e8;
+    display: block;
+    width: 231px;
+    height: 169px;
+    clear: both;
+    padding: 4px;
+}
+
+.wrapSectionList .item .name {
+    background: url('../images/maincat_bg.jpg') 0 0 repeat-x;
+    height: 65px;
+    width: 219px;
+    display: block;
+    clear: both;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 22px;
+    padding: 9px 10px;
+}
+
+.mlfReviews h3 {
+    color: #424242;
+    font-size: 48px;
+    text-transform: uppercase;
+    margin: 30px auto;
+    clear: both;
+    text-align: center;
+    background: url('../images/line2.png') 50% 100% no-repeat;
+    padding-bottom: 5px;
+}
+.mlfReviews .rewiewsList {
+    display: block;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+.mlfReviews .rewiewsList .rewiew {
+    display: block;
+    width: 100%;
+    clear: both;
+    padding: 5px 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+.mlfReviews .rewiewsList .rewiew .name {
+    display: block;
+    width: 99%;
+    clear: both;
+    color: #424242;
+    font-size: 30px;
+    border-bottom: 7px solid #34e1fe;
+    padding-bottom: 5px;
+}
+.mlfReviews .rewiewsList .rewiew .wrap {
+    display: block;
+    width: 99%;
+    clear: both;
+    overflow: hidden;
+    box-shadow: 1px 1px 3px 0px rgba(50, 50, 50, 0.75);
+    background: #ffffff;
+}
+.mlfReviews .rewiewsList .info {
+    width: 90%;
+    float: left;
+    color: #555555;
+    font-size: 14px;
+    padding: 15px;
+    line-height: 18px;
+}
+.mlfQest {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    background: url('../images/qwest_bg.jpg') 50% 0px no-repeat;
+    height: 205px;
+}
+.mlfQest .left {
+    width: 60%;
+    float: left;
+    display: block;
+    padding: 45px 0;
+    font-size: 46px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.mlfQest .right {
+    width: 34%;
+    float: right;
+    display: block;
+    color: #34e1fe;
+    font-size: 30px;
+    line-height: 36px;
+    padding: 87px 0 0 0;
+    text-align: center;
+}
+.mlfQest .right a {
+    color: #34e1fe;
+    text-decoration: none;
+    border-bottom: 2px dashed #34e1fe;
+    padding-bottom: 3px;
+}
+.mlfQest .right a:hover {
+    color: #ffffff;
+    border-bottom: 2px dashed #ffffff;
+    padding-bottom: 3px;
+}
+.mlfShare2 .shareposition {
+    display: block;
+    width: 100%;
+    height: 610px;
+    position: relative;
+}
+.mlfShare2 .shareposition .leftShare {
+    display: block;
+    width: 742px;
+    height: 449px;
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background: url('../images/share.png') 0 0 no-repeat;
+    margin-top: 60px;
+}
+.timerWrap {
+    width: 315px;
+    height: 122px;
+    display: block;
+    overflow: hidden;
+}
+
+.timerWrap .deadlineTitle {
+    font-size: 18px;
+    color: #282828;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+.timerWrap .countdownHolder {
+    display: block;
+    width: 100%;
+    height: 100px;
+    clear: both;
+    overflow: hidden;
+}
+
+.timerWrap .countdownHolder span.countDays, .timerWrap .countdownHolder span.countHours, .timerWrap .countdownHolder span.countMinutes, .timerWrap .countdownHolder span.countSeconds {
+    display: block;
+    width: 51px;
+    height: 80px;
+    float: left;
+    margin: 9px;
+    background: url('../components/mlife/mlife.sharecount/top/images/share_bgday.png') 0 0 no-repeat;
+    padding: 0 4px;
+}
+
+.timerWrap .countdownHolder .position {
+    width: 24px;
+    height: 53px;
+    display: block;
+    float: left;
+    margin-left: 1px;
+    overflow: hidden;
+}
+
+.timerWrap .countdownHolder .position .digit {
+    width: 28px;
+    float: left;
+    height: 53px;
+    display: block;
+    overflow: hidden;
+}
+
+.timerWrap .countdownHolder .position .digit b {
+    display: block;
+    width: 24px;
+    height: 33px;
+    background: url('../components/mlife/mlife.sharecount/top/images/chisla.png') 50% 0 no-repeat;
+    float: left;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_2, .timerWrap .countdownHolder .position .static b.bgc_item_2 {
+    background-position: 50% -60px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_3, .timerWrap .countdownHolder .position .static b.bgc_item_3 {
+    background-position: 50% -120px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_4, .timerWrap .countdownHolder .position .static b.bgc_item_4 {
+    background-position: 50% -180px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_5, .timerWrap .countdownHolder .position .static b.bgc_item_5 {
+    background-position: 50% -240px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_6, .timerWrap .countdownHolder .position .static b.bgc_item_6 {
+    background-position: 50% -300px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_7, .timerWrap .countdownHolder .position .static b.bgc_item_7 {
+    background-position: 50% -360px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_8, .timerWrap .countdownHolder .position .static b.bgc_item_8 {
+    background-position: 50% -420px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_9, .timerWrap .countdownHolder .position .static b.bgc_item_9 {
+    background-position: 50% -480px;
+}
+.timerWrap .countdownHolder .position .digit b.bgc_item_0, .timerWrap .countdownHolder .position .static b.bgc_item_0 {
+    background-position: 50% -540px;
+}
+.timerWrap .countdownHolder .countDiv {
+    display: block;
+    clear: both;
+    width: 100%;
+    font-size: 14px;
+    color: #1c1c1c;
+    text-align: center;
+    padding-top: 3px;
+    overflow: hidden;
+}
+.mlfShare2 .shareposition .leftShare .timerWrap {
+    margin: 96px 0 0 315px;
+    clear: both;
+}
+.mlfShare2 .shareposition .leftShare .wraptext {
+    display: block;
+    width: 415px;
+    height: 135px;
+    float: right;
+    margin-top: 30px;
+    margin-right: 95px;
+    clear: both;
+}
+.mlfShare2 .shareposition .leftShare .wraptext .text1 {
+    font-size: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+    padding-bottom: 5px;
+}
+.mlfShare2 .shareposition .leftShare .wraptext .text2 {
+    font-size: 30px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-left: 133px;
+    text-shadow: 1px 1px 0px rgba(150, 150, 150, 1);
+}
+.mlfShare2 .shareposition .leftShare .wraptext .text3 {
+    font-size: 18px;
+    color: #4d5864;
+    margin-left: 143px;
+    padding-top: 10px;
+}
+.mlfShare2 .shareposition .leftShare .wraptext .text4 {
+    font-size: 24px;
+    color: #4d5864;
+    margin-left: 183px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.mlfShare2 .shareposition .rightShare {
+    height: 430px;
+    width: 300px;
+    display: block;
+    position: absolute;
+    z-index: 3;
+    padding: 5px;
+    background: #ffffff;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 1px 1px 6px 0px rgba(50, 50, 50, 0.75);
+    right: 5px;
+    top: 78px;
+}
+.rightShare .formShare {
+    width: 100%;
+    display: block;
+    height: 100%;
+    position: relative;
+    background: #c1c1c1 url('../images/blick.png') 0 0 no-repeat;
+    float: right;
+}
+.formShare h4 {
+    color: #4d5864;
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    padding: 20px 0 10px 0;
+}
+.formShare p {
+    color: #4d5864;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    padding: 0px 0 10px 0;
+}
+.formShare .field {
+    width: 100%;
+    float: left;
+    display: block;
+    padding-top: 20px;
+    position: relative;
+}
+.formShare .field input {
+    border: 1px solid #aeadad;
+    padding: 7px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 18px;
+    width: 85%;
+    float: left;
+    color: #868686;
+    -webkit-box-shadow: 0px 0px 4px rgba(124, 124, 124, 0.65) inset;
+    -moz-box-shadow: 0px 0px 4px rgba(124, 124, 124, 0.65) inset;
+    box-shadow: 0px 0px 4px rgba(124, 124, 124, 0.65) inset;
+    margin-left: 15px;
+}
+.formShare .button {
+    width: 100%;
+    float: left;
+    display: block;
+    padding-top: 10px;
+    position: relative;
+}
+.formShare .button a {
+    display: block;
+    width: 253px;
+    height: 64px;
+    background: url('../images/button.png') 0 0 no-repeat;
+    line-height: 57px;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-align: center;
+    color: #5e5e5e;
+    text-decoration: none;
+    margin: 10px auto;
+    font-weight: bold;
+    font-family: 'Tahoma';
+}
+.formShare .button a:hover {
+    background-position: 0 -64px;
+}
+.formShare .preload {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    background: url('../images/loadbg2.png') 0 0 repeat;
+}
+.formShare .preload .load {
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: url('../images/load.gif') 50% 50% no-repeat;
+    opacity: 0.8;
+}
+.formShare .fielderror {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 5px;
+    font-size: 12px;
+    background: #12E4E7;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 635px) {
+    .mlfShare2 .shareposition, .mlfShare2 {
+        height: auto;
+        margin: 0;
+    }
+
+    .mlfShare2 {
+        background-size: auto 100%;
+        background: #9efff7;
+    }
+
+    .mlfShare2 .shareposition .leftShare {
+        position: static;
+        margin: 0;
+        clear: both;
+        height: auto;
+        margin-bottom: 0px;
+        background: none;
+        width: auto;
+    }
+
+    .mlfShare2 .shareposition .rightShare {
+        position: static;
+        margin: 0;
+        clear: both;
+        margin: 0px auto;
+        margin-bottom: 20px;
+    }
+
+    .mlfShare2 .shareposition .leftShare .wraptext {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        padding-top: 30px;
+        height: auto;
+    }
+
+    .mlfShare2 .shareposition .leftShare .wraptext .text1, .mlfShare2 .shareposition .leftShare .wraptext .text2, .mlfShare2 .shareposition .leftShare .wraptext .text3, .mlfShare2 .shareposition .leftShare .wraptext .text4 {
+        margin: 5px auto 0px auto;
+    }
+
+    .mlfShare2 .shareposition .leftShare .timerWrap {
+        width: 100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+
+    .mlfShare2 .timerWrap .countdownHolder {
+        text-align: center;
+    }
+
+    .mlfShare2 .timerWrap .countdownHolder span {
+        display: inline-block;
+        float: none;
+    }
+
+    .timerWrap .countdownHolder span.countDays, .timerWrap .countdownHolder span.countHours, .timerWrap .countdownHolder span.countMinutes, .timerWrap .countdownHolder span.countSeconds {
+        margin: 2px;
+    }
+
+    .mlfShare {
+        background: #bde0ff;
+    }
 }

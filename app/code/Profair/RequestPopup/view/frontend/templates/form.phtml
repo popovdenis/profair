@@ -1,0 +1,15 @@
+<?php /* @var \Profair\RequestPopup\Block\Request\Popup $block*/ ?>
+
+<div class="send_request_popup hidden">
+    Saving your workflow will reject any upapproved Requisitions in case if Approval Workflow form contains changes. Please review the requisitions section before proceeding.
+</div>
+<script type="text/x-magento-init">
+    {
+        "#submitformf1": {
+            "sendRequestPopup": {
+                "popupHolder": ".send_request_popup",
+                "popupTitle": "<?= __('Send Request') ?>"
+            }
+        }
+    }
+</script>

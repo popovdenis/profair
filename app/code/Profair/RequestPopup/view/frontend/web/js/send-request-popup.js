@@ -12,7 +12,8 @@ define([
         options: {
             popupHolder: '',
             popupTitle: '',
-            sendRequestForm: ''
+            sendRequestForm: '',
+            sendRequestActionUrl: ''
         },
 
         /**
@@ -50,7 +51,7 @@ define([
         },
 
         _sendRequestEventHandler: function (event) {
-            $(this.options.approvalWorkflowForm).trigger('submit');
+            $(this.options.sendRequestForm).trigger('submit');
         },
 
         /**

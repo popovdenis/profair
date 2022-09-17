@@ -8,7 +8,8 @@
         "#submitformf1": {
             "sendRequestPopup": {
                 "popupHolder": ".send_request_popup",
-                "popupTitle": "<?= __('Send Request') ?>"
+                "popupTitle": "<?= __('Send Request') ?>",
+                "sendRequestActionUrl": "<?= $block->escapeUrl($block->getActionUrl()) ?>"
             }
         }
     }

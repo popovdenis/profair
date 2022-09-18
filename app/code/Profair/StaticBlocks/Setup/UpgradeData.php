@@ -76,6 +76,9 @@ class UpgradeData implements UpgradeDataInterface
             $this->addFreeRepairBlock();
             $this->addOurAbilitiesBlock();
         }
+        if (version_compare($this->setupVersion, '1.0.3') < 0) {
+            $this->addPromotionBlock();
+        }
 
         $setup->endSetup();
     }
@@ -298,6 +301,36 @@ class UpgradeData implements UpgradeDataInterface
         $cmsBlockData = [
             'title' => 'Наши возможности',
             'identifier' => 'our_abilities',
+            'content' => $content,
+            'is_active' => 1,
+            'stores' => [0],
+            'sort_order' => 0
+        ];
+
+        $this->createCmsBlock($cmsBlockData);
+    }
+
+    private function addPromotionBlock()
+    {
+        $content = '
+            <div class="text1">
+                <span style="color: red;">Акция!</span>
+                <span style="color: #ff5d00;">При покупке кондиционера</span>
+            </div>
+            <div class="text2">
+                <span style="color: #0961ab; font-size: 16px; line-height: 22px;">
+                    <a href="https://profair.by/catalog/general/4342/">General Climate GC/GU-А07HR</a>
+                </span><br>
+                <span style="color: #ff0000; font-size: 20px; line-height: 26px;"><strong>699 руб.</strong>
+                <span style="text-decoration: line-through;">785 руб.</span> </span>
+            </div>
+            <div class="text3">
+                <span style="color: #ff0000;">+ монтаж кондиционера <br>за 99 руб.</span>
+                <span style="text-decoration: line-through;">230 руб.</span>
+            </div>';
+        $cmsBlockData = [
+            'title' => 'Акция',
+            'identifier' => 'sale_promotion',
             'content' => $content,
             'is_active' => 1,
             'stores' => [0],

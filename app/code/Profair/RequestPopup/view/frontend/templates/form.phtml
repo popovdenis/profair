@@ -1,7 +1,13 @@
 <?php /* @var \Profair\RequestPopup\Block\Request\Popup $block*/ ?>
-
+<div class="wrap980">
+    <div class="shareposition">
+        <div class="leftShare"><?= $block->getChildHtml('profair.sale.promotion') ?></div>
+        <div class="rightShare"><?= $block->getChildHtml('profair.sale.send_request') ?></div>
+    </div>
+</div>
 <div class="send_request_popup hidden">
-    Saving your workflow will reject any upapproved Requisitions in case if Approval Workflow form contains changes. Please review the requisitions section before proceeding.
+    Saving your workflow will reject any upapproved Requisitions in case if Approval Workflow form contains changes.
+    Please review the requisitions section before proceeding.
 </div>
 <script type="text/x-magento-init">
     {

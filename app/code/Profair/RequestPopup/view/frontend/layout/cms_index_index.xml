@@ -8,10 +8,33 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceContainer name="content">
+            <container htmlTag="div" htmlClass="mlfShare2" name="profair.sale.promotion.container"
+                       before="-">
+                <block class="Magento\Framework\View\Element\Template"
+                       name="profair.sale.promotion"
+                       template="Profair_RequestPopup::promotion.phtml">
+                    <block class="Magento\Cms\Block\Block" name="profair.sale.promotion.banner">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">sale_promotion</argument>
+                        </arguments>
+                    </block>
+                    <block class="Magento\Framework\View\Element\Template"
+                           name="profair.sale.promotion.timer"
+                           template="Profair_RequestPopup::timer.phtml" />
+
+                    <block class="Magento\Framework\View\Element\Template"
+                           name="profair.sale.send_request"
+                           template="Profair_RequestPopup::send_request.phtml" />
+                </block>
+            </container>
+        </referenceContainer>
+
         <referenceContainer name="before.body.end">
             <block class="Profair\RequestPopup\Block\Request\Popup"
                    name="profair.reqest.popup"
-                   template="Profair_RequestPopup::form.phtml" />
+                   template="Profair_RequestPopup::form.phtml">
+            </block>
         </referenceContainer>
     </body>
 </page>

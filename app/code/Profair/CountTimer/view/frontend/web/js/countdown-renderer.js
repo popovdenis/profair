@@ -1,5 +1,5 @@
 define([
-    'Profair_RequestPopup/js/view/countdown-template',
+    'Profair_CountTimer/js/view/countdown-template',
     'mage/template',
     'mage/mage'
 ], function (countdownTemplate, mageTemplate) {

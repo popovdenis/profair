@@ -70,7 +70,6 @@ class UpgradeData implements UpgradeDataInterface
             $this->addPhoneBlock();
         }
         if (version_compare($this->setupVersion, '1.0.2') < 0) {
-            $this->addSaleBlock();
             $this->addBrandsBlock();
             $this->addWorkInstructionBlock();
             $this->addFreeRepairBlock();
@@ -112,25 +111,6 @@ class UpgradeData implements UpgradeDataInterface
             'title' => 'Logo Phone',
             'identifier' => 'logo_header_phone',
             'content' => $phoneContent,
-            'is_active' => 1,
-            'stores' => [0],
-            'sort_order' => 0
-        ];
-
-        $this->createCmsBlock($cmsBlockData);
-    }
-
-    private function addSaleBlock()
-    {
-        $content = '<div class="wrap980">
-            <div class="shareposition">
-            <div class="leftShare"></div>
-            <div class="rightShare"></div>
-        </div>';
-        $cmsBlockData = [
-            'title' => 'Sale',
-            'identifier' => 'sale',
-            'content' => $content,
             'is_active' => 1,
             'stores' => [0],
             'sort_order' => 0

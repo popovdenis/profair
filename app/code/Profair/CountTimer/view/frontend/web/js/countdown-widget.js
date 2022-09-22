@@ -1,7 +1,7 @@
 define([
     'jquery',
-    'Profair_RequestPopup/js/countdown-renderer',
-    'Profair_RequestPopup/js/jquery.countdown',
+    'Profair_CountTimer/js/countdown-renderer',
+    'Profair_CountTimer/js/jquery.countdown',
     'jquery/ui'
 ], function ($, countdownRenderer) {
     'use strict';

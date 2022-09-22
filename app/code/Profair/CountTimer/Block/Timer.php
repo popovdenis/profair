@@ -1,11 +1,11 @@
 <?php
 
-namespace Profair\RequestPopup\Block;
+namespace Profair\CountTimer\Block;
 
 /**
  * Class Timer
  *
- * @package Profair\RequestPopup\Block
+ * @package Profair\CountTimer\Block
  */
 class Timer extends \Magento\Framework\View\Element\Template
 {

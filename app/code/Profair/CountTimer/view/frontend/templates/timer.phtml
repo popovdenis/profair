@@ -1,7 +1,9 @@
-<?php /* @var \Profair\RequestPopup\Block\Timer $block*/ ?>
+<?php /* @var \Profair\CountTimer\Block\Timer $block*/ ?>
 <?php if($block->isCountdownEnabled()): ?>
+<div class="timerWrap">
     <div class="deadlineTitle"><?= __('До конца акции:') ?></div>
     <div id="mlfcounter" class="countdownHolder"></div>
+</div>
 <?php endif; ?>
 <script type="text/x-magento-init">
 {

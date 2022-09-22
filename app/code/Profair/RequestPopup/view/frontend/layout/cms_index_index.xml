@@ -9,8 +9,10 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="profair.promotion.container.shareposition">
-            <container htmlTag="div" htmlClass="rightShare" name="profair.promotion.container.shareposition.rightShare" before="leftShare">
-                <block class="Magento\Framework\View\Element\Template" name="profair.promotion.send_request"
+            <container htmlTag="div" htmlClass="rightShare"
+                       name="profair.promotion.container.shareposition.rightShare" before="leftShare">
+                <block class="Profair\RequestPopup\Block\Request\Popup"
+                       name="profair.promotion.send_request"
                        template="Profair_RequestPopup::send_request.phtml" />
             </container>
         </referenceContainer>

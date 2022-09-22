@@ -529,7 +529,7 @@ a img {
     font-weight: bold;
 }
 .mlfShare2 .shareposition .rightShare {
-    height: 430px;
+    height: 420px;
     width: 300px;
     display: block;
     position: absolute;
@@ -559,13 +559,17 @@ a img {
     display: block;
     text-align: center;
     padding: 20px 0 10px 0;
+    margin: 0;
+    border: 0;
 }
 .formShare p {
     color: #4d5864;
     font-size: 18px;
     display: block;
     text-align: center;
-    padding: 0px 0 10px 0;
+    padding: 0;
+    margin: 0 0 5px;
+    border: 0;
 }
 .formShare .field {
     width: 100%;
@@ -587,6 +591,8 @@ a img {
     -moz-box-shadow: 0px 0px 4px rgba(124, 124, 124, 0.65) inset;
     box-shadow: 0px 0px 4px rgba(124, 124, 124, 0.65) inset;
     margin-left: 15px;
+    margin-top: 0;
+    box-sizing: content-box;
 }
 .formShare .button {
     width: 100%;
@@ -595,7 +601,7 @@ a img {
     padding-top: 10px;
     position: relative;
 }
-.formShare .button a {
+.formShare .action.primary {
     display: block;
     width: 253px;
     height: 64px;
@@ -606,11 +612,13 @@ a img {
     text-align: center;
     color: #5e5e5e;
     text-decoration: none;
-    margin: 10px 16px;
+    margin: 10px auto;
     font-weight: bold;
     font-family: 'Tahoma';
+    border: none;
+    padding: 0;
 }
-.formShare .button a:hover {
+.formShare .action.primary:hover {
     background-position: 0 -64px;
 }
 .formShare .preload {

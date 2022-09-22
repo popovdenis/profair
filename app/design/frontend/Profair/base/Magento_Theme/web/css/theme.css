@@ -419,7 +419,7 @@ a img {
     height: 80px;
     float: left;
     margin: 9px;
-    background: url('../components/mlife/mlife.sharecount/top/images/share_bgday.png') 0 0 no-repeat;
+    background: url('../images/share_bgday.png') 0 0 no-repeat;
     padding: 0 4px;
 }
 
@@ -444,7 +444,7 @@ a img {
     display: block;
     width: 24px;
     height: 33px;
-    background: url('../components/mlife/mlife.sharecount/top/images/chisla.png') 50% 0 no-repeat;
+    background: url('../images/chisla.png') 50% 0 no-repeat;
     float: left;
     margin-top: 10px;
     overflow: hidden;

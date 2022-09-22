@@ -19,7 +19,7 @@
                             <argument name="block_id" xsi:type="string">sale_promotion</argument>
                         </arguments>
                     </block>
-                    <block class="Magento\Framework\View\Element\Template"
+                    <block class="Profair\RequestPopup\Block\Timer"
                            name="profair.sale.promotion.timer"
                            template="Profair_RequestPopup::timer.phtml" />
 

@@ -636,7 +636,17 @@ a img {
     background: url('../images/load.gif') 50% 50% no-repeat;
     opacity: 0.8;
 }
-.formShare .fielderror {
+.formShare div.fielderror {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    padding: 5px;
+    font-size: 12px;
+    background: #12E4E7;
+    color: #ffffff;
+    border-radius: 5px;
+}
+.formShare .mage-error {
     position: absolute;
     top: 5px;
     left: 5px;

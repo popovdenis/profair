@@ -3,23 +3,32 @@
       novalidate
       action="<?= $block->escapeUrl($block->getActionUrl()) ?>"
       method="post"
-      data-mage-init='{"validation": {"errorClass": "mage-error"}}'
-      id="contact-validate-detail">
+      data-mage-init='{"validation": {"errorClass": "fielderror"}}'
+      id="contact-request-form">
     <div class="formShare">
         <h4>Zostaw prośbę</h4>
         <p>o bezpłatną konsultację, a nasz specjalista skontaktuje się z Tobą</p>
         <div class="wrapfield">
-            <div class="field">
-                <label class="label" for="f1name"></label>
-                <input id="f1name" class="mlfinp" name="name" type="text" value="" placeholder="Ваше имя*" />
+            <div class="field required">
+                <div>
+                    <label class="label" for="f1name"></label>
+                    <input id="f1name" class="mlfinp" name="name" type="text" value="" placeholder="Ваше имя*"
+                           data-validate="{required:true}" />
+                </div>
             </div>
-            <div class="field">
-                <label class="label" for="f1phone"></label>
-                <input id="f1phone" class="mlfinp" name="phone" type="text" value="" placeholder="Моб. телефон*">
+            <div class="field required">
+                <div>
+                    <label class="label" for="f1phone"></label>
+                    <input id="f1phone" class="mlfinp" name="phone" type="text" value="" placeholder="Моб. телефон*"
+                           data-validate="{required:true}" />
+                </div>
             </div>
-            <div class="field">
-                <label class="label" for="f1email"></label>
-                <input id="f1email" class="mlfinp" name="email" type="text" value="" placeholder="Ваш Email">
+            <div class="field required">
+                <div>
+                    <label class="label" for="f1email"></label>
+                    <input id="f1email" class="mlfinp" name="email" type="text" value="" placeholder="Ваш Email"
+                           data-validate="{required:true}" />
+                </div>
             </div>
             <div class="button">
                 <button class="action primary" title="<?= $block->escapeHtmlAttr(__('Send')) ?>"
@@ -28,3 +37,11 @@
         </div>
     </div>
 </form>
+<div class="contact-request-widget"></div>
+<script type="text/x-magento-init">
+{
+    ".contact-request-widget": {
+        "contact-request": {}
+    }
+}
+</script>

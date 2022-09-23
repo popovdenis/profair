@@ -2,7 +2,12 @@
 
 namespace Profair\RequestPopup\Controller\Request;
 
+use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
+use Magento\Framework\Data\Form\FormKey\Validator;
+use Magento\Framework\DataObjectFactory as ObjectFactory;
+use Magento\Framework\Serialize\Serializer\Json;
+use Magento\Framework\View\LayoutInterface;
 
 /**
  * Class Send
@@ -12,19 +17,77 @@ use Magento\Framework\App\ResponseInterface;
 class Send extends \Magento\Framework\App\Action\Action
 {
     /**
-     * Execute action based on request and return result
+     * @var \Magento\Framework\Data\Form\FormKey\Validator
+     */
+    protected $_formKeyValidator;
+    /**
+     * @var \Magento\Framework\Data\Form\FormKey\Validator
+     */
+    private $formKeyValidator;
+    /**
+     * @var ObjectFactory
+     */
+    private $objectFactory;
+    /**
+     * @var \Magento\Framework\Serialize\Serializer\Json
+     */
+    private $serialize;
+    /**
+     * @var \Magento\Framework\View\LayoutInterface
+     */
+    protected $layout;
+
+    /**
+     * Send constructor.
      *
-     * Note: Request will be added as operation argument in future
-     *
+     * @param \Magento\Framework\App\Action\Context          $context
+     * @param \Magento\Framework\Data\Form\FormKey\Validator $formKeyValidator
+     * @param \Magento\Framework\DataObjectFactory           $objectFactory
+     * @param \Magento\Framework\Serialize\Serializer\Json   $serialize
+     * @param \Magento\Framework\View\LayoutInterface        $layout
+     */
+    public function __construct(
+        Context $context,
+        Validator $formKeyValidator,
+        ObjectFactory $objectFactory,
+        Json $serialize,
+        LayoutInterface $layout
+    )
+    {
+        parent::__construct($context);
+        $this->formKeyValidator = $formKeyValidator;
+        $this->objectFactory = $objectFactory;
+        $this->serialize = $serialize;
+        $this->layout = $layout;
+    }
+
+    /**
      * @return \Magento\Framework\Controller\ResultInterface|ResponseInterface
      */
     public function execute()
     {
-        /* @var \Magento\Framework\Controller\Result\Redirect $resultRedirect */
-        $resultRedirect = $this->resultRedirectFactory->create();
+//        if (!$this->formKeyValidator->validate($this->getRequest())) {
+//            $message = __('We can\'t add this item to your shopping cart right now. Please reload the page.');
+//            $resultObject = $this->objectFactory->create(['success' => false, 'message' => $message]);
+//
+//            return $this->getJsonResponse($resultObject);
+//        }
 
-        $this->messageManager->addSuccessMessage(__('The request was sent successfully'));
+        $successBlock = $this->layout->createBlock('Magento\Cms\Block\Block')->setBlockId('send_request_success');
+        $resultObject = [
+            'success' => true,
+            'message' => $successBlock->toHtml()
+        ];
 
-        return $resultRedirect->setPath('*/');
+        return $this->getJsonResponse($resultObject);
+    }
+
+    private function getJsonResponse($result)
+    {
+        $resultObject = $this->objectFactory->create(['data' => ['result' => $result]]);
+
+        return $this->getResponse()->representJson(
+            $this->serialize->serialize($result)
+        );
     }
 }

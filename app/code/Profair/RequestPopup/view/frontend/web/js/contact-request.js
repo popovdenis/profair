@@ -66,8 +66,13 @@ define([
             });
         },
 
-        confirm: function (params) {
-
+        confirm: function (response) {
+            if (typeof response != "undefined"
+                && typeof response.success != "undefined"
+                && typeof response.message != "undefined"
+            ) {
+                $(this.options.contactRequestForm).find('.formShare').html(response.message);
+            }
         }
     });
 

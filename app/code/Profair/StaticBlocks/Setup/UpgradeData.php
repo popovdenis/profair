@@ -78,6 +78,9 @@ class UpgradeData implements UpgradeDataInterface
         if (version_compare($this->setupVersion, '1.0.3') < 0) {
             $this->addPromotionBlock();
         }
+        if (version_compare($this->setupVersion, '1.0.4') < 0) {
+            $this->addSendRequestSuccess();
+        }
 
         $setup->endSetup();
     }
@@ -319,7 +322,24 @@ class UpgradeData implements UpgradeDataInterface
 
         $this->createCmsBlock($cmsBlockData);
     }
-    
+
+    private function addSendRequestSuccess()
+    {
+        $content = '
+            <h4>Оставьте заявку</h4>
+            <div class="descerr">Ваш запрос принят, наш менеджер свяжется с вами в ближайшее время</div>';
+        $cmsBlockData = [
+            'title' => 'Оставьте заявку',
+            'identifier' => 'send_request_success',
+            'content' => $content,
+            'is_active' => 1,
+            'stores' => [0],
+            'sort_order' => 0
+        ];
+
+        $this->createCmsBlock($cmsBlockData);
+    }
+
     /**
      * @param $identifier
      *

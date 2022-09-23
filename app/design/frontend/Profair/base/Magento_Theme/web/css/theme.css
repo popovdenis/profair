@@ -543,7 +543,8 @@ a img {
     right: 5px;
     top: 78px;
 }
-.rightShare .formShare {
+.rightShare .formShare,
+.rightShare .profair-contact-request {
     width: 100%;
     display: block;
     height: 100%;
@@ -655,6 +656,38 @@ a img {
     background: #12E4E7;
     color: #ffffff;
     border-radius: 5px;
+}
+.descerr {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    width: 90%;
+    margin: auto;
+    line-height: 22px;
+}
+.mlfPreim {
+    width: 100%;
+    display: block;
+    clear: both;
+    overflow: hidden;
+}
+.mlfPreim .wrap980 {
+    padding: 30px 0 30px 0;
+    overflow: hidden;
+}
+.mlfPreim p {
+    display: block;
+    width: 20%;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #343434;
+}
+.mlfPreim p img {
+    margin-bottom: 10px;
 }
 
 @media screen and (max-width: 635px) {

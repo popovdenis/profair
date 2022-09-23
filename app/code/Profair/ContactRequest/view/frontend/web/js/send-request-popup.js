@@ -5,7 +5,7 @@ define([
 ], function ($, modal) {
     'use strict';
 
-    $.widget('profair.sendRequestPopup', {
+    $.widget('profair.sendContactRequest', {
         /**
          * Widget options.
          */
@@ -77,5 +77,5 @@ define([
         }
     });
 
-    return $.profair.sendRequestPopup;
+    return $.profair.sendContactRequest;
 });

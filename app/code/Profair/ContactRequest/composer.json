@@ -1,5 +1,5 @@
 {
-  "name": "profair/request-popup",
+  "name": "profair/contact-request",
   "description": "N/A",
   "require": {
     "php": "~5.6.0|7.0.2|~7.0.6",

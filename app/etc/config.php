@@ -227,7 +227,7 @@ return [
         'Mageplaza_Core' => 1,
         'Profair_Promotion' => 1,
         'Profair_CountTimer' => 1,
-        'Profair_RequestPopup' => 1,
+        'Profair_ContactRequest' => 1,
         'Profair_StaticBlocks' => 1,
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1,

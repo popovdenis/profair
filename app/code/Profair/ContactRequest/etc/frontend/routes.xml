@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
         <route id="send_request" frontName="send_request">
-            <module name="Profair_RequestPopup"/>
+            <module name="Profair_ContactRequest"/>
         </route>
     </router>
 </config>

@@ -11,16 +11,16 @@
         <referenceContainer name="profair.promotion.container.shareposition">
             <container htmlTag="div" htmlClass="rightShare"
                        name="profair.promotion.container.shareposition.rightShare" before="leftShare">
-                <block class="Profair\RequestPopup\Block\Request\Popup"
+                <block class="Profair\ContactRequest\Block\Request\Popup"
                        name="profair.promotion.send_request"
-                       template="Profair_RequestPopup::send_request.phtml" />
+                       template="Profair_ContactRequest::send_request.phtml" />
             </container>
         </referenceContainer>
 
         <referenceContainer name="before.body.end">
-            <block class="Profair\RequestPopup\Block\Request\Popup"
+            <block class="Profair\ContactRequest\Block\Request\Popup"
                    name="profair.reqest.popup"
-                   template="Profair_RequestPopup::form.phtml">
+                   template="Profair_ContactRequest::form.phtml">
             </block>
         </referenceContainer>
     </body>

@@ -1,13 +1,13 @@
 <?php
 
-namespace Profair\RequestPopup\Block\Request;
+namespace Profair\ContactRequest\Block\Request;
 
 use Magento\Framework\View\Element\Template;
 
 /**
  * Class Popup
  *
- * @package Profair\RequestPopup\Block\Request
+ * @package Profair\ContactRequest\Block\Request
  */
 class Popup extends Template
 {

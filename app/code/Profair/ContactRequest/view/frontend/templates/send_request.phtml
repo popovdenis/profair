@@ -1,4 +1,4 @@
-<?php /** @var \Profair\ContactRequest\Block\Request\Popup $block */ ?>
+<?php /** @var \Profair\ContactRequest\Block\Request\Contact $block */ ?>
 <form class="profair-contact-request"
       novalidate
       action="<?= $block->escapeUrl($block->getActionUrl()) ?>"
@@ -6,8 +6,7 @@
       data-mage-init='{"validation": {"errorClass": "fielderror"}}'
       id="contact-request-form">
     <div class="formShare">
-        <h4>Zostaw prośbę</h4>
-        <p>o bezpłatną konsultację, a nasz specjalista skontaktuje się z Tobą</p>
+        <?php echo $block->getChildHtml('profair.promotion.send_request.general') ?>
         <div class="wrapfield">
             <div class="field required">
                 <div>

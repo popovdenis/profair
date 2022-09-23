@@ -11,14 +11,20 @@
         <referenceContainer name="profair.promotion.container.shareposition">
             <container htmlTag="div" htmlClass="rightShare"
                        name="profair.promotion.container.shareposition.rightShare" before="leftShare">
-                <block class="Profair\ContactRequest\Block\Request\Popup"
+                <block class="Profair\ContactRequest\Block\Request\Contact"
                        name="profair.promotion.send_request"
-                       template="Profair_ContactRequest::send_request.phtml" />
+                       template="Profair_ContactRequest::send_request.phtml">
+                    <block class="Magento\Cms\Block\Block" name="profair.promotion.send_request.general">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">send_request_general</argument>
+                        </arguments>
+                    </block>
+                </block>
             </container>
         </referenceContainer>
 
         <referenceContainer name="before.body.end">
-            <block class="Profair\ContactRequest\Block\Request\Popup"
+            <block class="Profair\ContactRequest\Block\Request\Contact"
                    name="profair.reqest.popup"
                    template="Profair_ContactRequest::form.phtml">
             </block>

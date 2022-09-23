@@ -9,7 +9,7 @@ use Magento\Framework\View\Element\Template;
  *
  * @package Profair\ContactRequest\Block\Request
  */
-class Popup extends Template
+class Contact extends Template
 {
     /**
      * @return string

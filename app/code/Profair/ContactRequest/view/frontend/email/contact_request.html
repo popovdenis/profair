@@ -4,16 +4,27 @@
     <tr>
         <td>
             <div>
-                {{trans "Or if anything got you confused in shopping process?"}}
-                {{trans "Feel free to contact again to discuss problems you may have."}}
-                {{trans "Your satisfaction is the best product we desire to deliver."}}
-            </div>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <div>
-                {{trans "Looking forward to seeing you around!"}}
+                {{trans "You have received the request:"}}
+                <table class="request-details">
+                    <tr>
+                        <td class="contact-data">
+                            <h3>{{trans "Name"}}</h3>
+                            <p>{{var contact_name|raw}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="contact-data">
+                            <h3>{{trans "Phone"}}</h3>
+                            <p>{{var contact_phone|raw}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="contact-data">
+                            <h3>{{trans "Email"}}</h3>
+                            <p>{{var contact_email|raw}}</p>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </td>
     </tr>

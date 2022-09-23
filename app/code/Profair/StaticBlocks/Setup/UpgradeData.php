@@ -79,6 +79,7 @@ class UpgradeData implements UpgradeDataInterface
             $this->addPromotionBlock();
         }
         if (version_compare($this->setupVersion, '1.0.4') < 0) {
+            $this->addSendRequestGeneral();
             $this->addSendRequestSuccess();
         }
 
@@ -323,13 +324,30 @@ class UpgradeData implements UpgradeDataInterface
         $this->createCmsBlock($cmsBlockData);
     }
 
+    private function addSendRequestGeneral()
+    {
+        $content = '
+            <h4>Zostaw prośbę</h4>
+            <p>o bezpłatną konsultację, a nasz specjalista skontaktuje się z Tobą</p>';
+        $cmsBlockData = [
+            'title' => 'Оставьте заявку',
+            'identifier' => 'send_request_general',
+            'content' => $content,
+            'is_active' => 1,
+            'stores' => [0],
+            'sort_order' => 0
+        ];
+
+        $this->createCmsBlock($cmsBlockData);
+    }
+
     private function addSendRequestSuccess()
     {
         $content = '
-            <h4>Оставьте заявку</h4>
-            <div class="descerr">Ваш запрос принят, наш менеджер свяжется с вами в ближайшее время</div>';
+            <h4>Zostaw prośbę</h4>
+            <div class="descer">Twoja prośba została zaakceptowana, nasz menedżer wkrótce się z Tobą skontaktuje</div>';
         $cmsBlockData = [
-            'title' => 'Оставьте заявку',
+            'title' => 'Заявка отправлена',
             'identifier' => 'send_request_success',
             'content' => $content,
             'is_active' => 1,

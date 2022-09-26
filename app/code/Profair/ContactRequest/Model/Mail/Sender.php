@@ -47,31 +47,62 @@ class Sender
     /**
      * @param \Magento\Framework\DataObject $senderData
      * @param string                        $recipientEmail
+     *
+     * @throws \Magento\Framework\Exception\LocalizedException
+     * @throws \Magento\Framework\Exception\MailException
      */
     public function sendContactEmail(DataObject $senderData, string $recipientEmail)
     {
-        try {
-            $recipient = [[
-                'email'     => $recipientEmail,
-                'fullName'  => $recipientEmail,
-            ]];
+        $templateParams = [
+            'contact_name' => $senderData->getName(),
+            'contact_phone' => $senderData->getPhone(),
+            'contact_email' => $senderData->getEmail()
+        ];
 
-            $templateParams = [
-                'contact_name' => $senderData->getName(),
-                'contact_phone' => $senderData->getPhone(),
-                'contact_email' => $senderData->getEmail()
-            ];
+        $this->configureEmailTemplate($templateParams);
 
-            $this->transportBuilder->setTemplateIdentifier('profair_contact_request')
-                ->setTemplateOptions(['area' => Area::AREA_FRONTEND, 'store' => $this->getDefaultStoreId()])
-                ->setTemplateVars($templateParams)
-                ->setFromByScope(['email' => $recipientEmail, 'name' => 'Profair Contact Request']);
-            $this->addRecipients($recipient);
+        $this->transportBuilder->addTo($recipientEmail, $recipientEmail);
 
-            $this->transportBuilder->getTransport()->sendMessage();
-        } catch (\Exception $e) {
-            $this->logger->critical('Error while sending email. ' . $e->getMessage());
-        }
+        $transport = $this->transportBuilder->getTransport();
+        $transport->sendMessage();
+//        try {
+//            $recipient = [[
+//                'email'     => $recipientEmail,
+//                'fullName'  => $recipientEmail,
+//            ]];
+//
+//
+//
+//            $this->transportBuilder->setTemplateIdentifier('profair_contact_request')
+//                ->setTemplateOptions(['area' => Area::AREA_FRONTEND, 'store' => $this->getDefaultStoreId()])
+//                ->setTemplateVars($templateParams)
+//                ->setFromByScope(['email' => $recipientEmail, 'name' => 'Profair Contact Request']);
+//            $this->addRecipients($recipient);
+//
+//            $this->transportBuilder->getTransport()->sendMessage();
+//        } catch (\Exception $e) {
+//            $this->logger->critical('Error while sending email. ' . $e->getMessage());
+//        }
+    }
+
+    /**
+     * Configure email template
+     *
+     * @return void
+     * @throws \Magento\Framework\Exception\MailException
+     */
+    protected function configureEmailTemplate(array $templateParams)
+    {
+        $this->transportBuilder->setTemplateIdentifier('profair_contact_request');
+        $this->transportBuilder->setTemplateOptions([
+            'area' => Area::AREA_FRONTEND,
+            'store' => $this->getDefaultStoreId()
+        ]);
+        $this->transportBuilder->setTemplateVars($templateParams);
+        $this->transportBuilder->setFromByScope(
+            'denispopov2112@gmail.com',
+            $this->getDefaultStoreId()
+        );
     }
 
     /**

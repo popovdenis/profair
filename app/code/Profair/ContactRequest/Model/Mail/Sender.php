@@ -100,7 +100,10 @@ class Sender
         ]);
         $this->transportBuilder->setTemplateVars($templateParams);
         $this->transportBuilder->setFromByScope(
-            'denispopov2112@gmail.com',
+            [
+                'name' => 'denispopov2112@gmail.com',
+                'email' => 'denispopov2112@gmail.com'
+            ],
             $this->getDefaultStoreId()
         );
     }

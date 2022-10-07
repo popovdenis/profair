@@ -15,14 +15,19 @@
             <container name="profair-link-wrapper" label="Profair Link Wrapper" as="profair-link-wrapper"
                        after="logo" htmlTag="div" htmlClass="profair wrapper">
                 <block class="Magento\Framework\View\Element\Template"
-                       name="profair.title.link" before="-" template="Magento_Theme::header/link.phtml" />
+                       name="profair.title.link" before="-" template="Magento_Theme::header/link.phtml">
+                    <container name="profair-link-search" />
+                </block>
             </container>
         </referenceContainer>
 
+        <move element="top.search" destination="profair-link-search"/>
+        <referenceContainer name="compare-link-wrapper" remove="true"/>
         <referenceBlock name="header" remove="true"/>
         <referenceBlock name="header.links" remove="true"/>
         <referenceBlock name="my-account-link" remove="true"/>
         <referenceBlock name="register-link" remove="true"/>
         <referenceBlock name="authorization-link" remove="true"/>
+        <referenceBlock name="minicart" remove="true"/>
     </body>
 </page>

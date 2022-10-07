@@ -5,7 +5,9 @@ use Magento\Framework\View\Element\Template;
 ?>
 <div class="item link headTop">
     <div class="lozung">
-        <?= $this->getLayout()->createBlock('Magento\Cms\Block\Block')->setBlockId('logo_header_center')->toHtml(); ?>
+        <div class="lozung-title"><?= $this->getLayout()->createBlock('Magento\Cms\Block\Block')
+                ->setBlockId('logo_header_center')->toHtml(); ?></div>
+        <?= $block->getChildHtml('profair-link-search') ?>
     </div>
     <div class="rigthWrap">
         <div class="phone">
@@ -17,21 +19,3 @@ use Magento\Framework\View\Element\Template;
     </div>
     <div style="clear: both;"></div>
 </div>
-<!--<script type="text/javascript">-->
-<!--    $(document).ready(function(){-->
-<!--        var unix_timestamp = 1662937752;-->
-<!--        $('#mlfcounter').countdown({-->
-<!--            timestamp: new Date(unix_timestamp*1000),-->
-<!--            showtext: true,-->
-<!--            text_d: 'дней',-->
-<!--            text_h: 'часов',-->
-<!--            text_m: 'минут',-->
-<!--            text_s: 'секунд'-->
-<!--        });-->
-<!--    });-->
-<!--</script>-->
-<!--<script type="text/javascript">-->
-<!--    $(document).ready(function(){-->
-<!--        $('#sharecount').val('12.09.2022 02:09:12, 2022.12.09 00');-->
-<!--    });-->
-<!--</script>-->

@@ -22,10 +22,6 @@ class Send extends \Magento\Framework\App\Action\Action
     /**
      * @var \Magento\Framework\Data\Form\FormKey\Validator
      */
-    protected $_formKeyValidator;
-    /**
-     * @var \Magento\Framework\Data\Form\FormKey\Validator
-     */
     private $formKeyValidator;
     /**
      * @var ObjectFactory

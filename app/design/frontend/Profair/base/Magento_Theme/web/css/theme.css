@@ -1,3 +1,6 @@
+.hidden {
+    display: none;
+}
 .clear {
     clear: both;
     display: block;
@@ -14,7 +17,6 @@
     font-size: 24px;
     color: #424242;
     line-height: 28px;
-    padding-top: 20px;
     display: block;
     text-transform: uppercase;
     clear: none;
@@ -688,6 +690,57 @@ a img {
 }
 .mlfPreim p img {
     margin-bottom: 10px;
+}
+.lozung-title {
+    margin-bottom: 15px;
+}
+.block-search {
+    float: left !important;
+    padding-left: 0 !important;
+}
+.rFormWrap .minform_order {
+    background: #ffa500;
+    position: relative;
+    overflow: hidden;
+}
+.rFormWrap .wrapfield {
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+.rFormWrap .button {
+    display: block;
+    clear: both;
+    padding: 10px 0;
+    text-align: center;
+}
+.rFormWrap .wrapfield input {
+    border: 2px #FF0000 solid;
+    background-color: #FFFFFF;
+    color: #2F4F4F;
+    font-family: Tahoma;
+    font-weight: bold;
+    font-size: 15px;
+    padding: 5px 15px 5px 17px;
+    text-align: left;
+    vertical-align: middle;
+}
+.product-item-name {
+    font-size: 21px;
+}
+.rFormWrap .descerr {
+    color: #ffffff;
+    font-weight: bold;
+}
+.descerr {
+    display: block;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 10px 0;
+    width: 90%;
+    margin: auto;
+    line-height: 22px;
 }
 
 @media screen and (max-width: 635px) {

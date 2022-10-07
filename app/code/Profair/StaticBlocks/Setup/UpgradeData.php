@@ -82,6 +82,9 @@ class UpgradeData implements UpgradeDataInterface
             $this->addSendRequestGeneral();
             $this->addSendRequestSuccess();
         }
+        if (version_compare($this->setupVersion, '1.0.5') < 0) {
+            $this->addBookProductResponse();
+        }
 
         $setup->endSetup();
     }
@@ -122,7 +125,10 @@ class UpgradeData implements UpgradeDataInterface
 
         $this->createCmsBlock($cmsBlockData);
     }
-    
+
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     private function addBrandsBlock()
     {
         $content = '<div class="wrap980">
@@ -230,6 +236,9 @@ class UpgradeData implements UpgradeDataInterface
         $this->createCmsBlock($cmsBlockData);
     }
 
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     private function addWorkInstructionBlock()
     {
         $content = '<div class="wrap980">
@@ -254,6 +263,9 @@ class UpgradeData implements UpgradeDataInterface
         $this->createCmsBlock($cmsBlockData);
     }
 
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     private function addFreeRepairBlock()
     {
         $content = '<div class="wrap980">
@@ -273,6 +285,9 @@ class UpgradeData implements UpgradeDataInterface
         $this->createCmsBlock($cmsBlockData);
     }
 
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     private function addOurAbilitiesBlock()
     {
         $content = '<div class="wrap980">
@@ -294,6 +309,9 @@ class UpgradeData implements UpgradeDataInterface
         $this->createCmsBlock($cmsBlockData);
     }
 
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     private function addPromotionBlock()
     {
         $content = '
@@ -324,6 +342,9 @@ class UpgradeData implements UpgradeDataInterface
         $this->createCmsBlock($cmsBlockData);
     }
 
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     private function addSendRequestGeneral()
     {
         $content = '
@@ -341,6 +362,9 @@ class UpgradeData implements UpgradeDataInterface
         $this->createCmsBlock($cmsBlockData);
     }
 
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
     private function addSendRequestSuccess()
     {
         $content = '
@@ -349,6 +373,24 @@ class UpgradeData implements UpgradeDataInterface
         $cmsBlockData = [
             'title' => 'Заявка отправлена',
             'identifier' => 'send_request_success',
+            'content' => $content,
+            'is_active' => 1,
+            'stores' => [0],
+            'sort_order' => 0
+        ];
+
+        $this->createCmsBlock($cmsBlockData);
+    }
+
+    /**
+     * @throws \Magento\Framework\Exception\LocalizedException
+     */
+    private function addBookProductResponse()
+    {
+        $content = '<div class="descerr">Ваш заказ принят, наш менеджер свяжется с вами в ближайшее время</div>';
+        $cmsBlockData = [
+            'title' => 'Бронирование продукта',
+            'identifier' => 'book_product_response',
             'content' => $content,
             'is_active' => 1,
             'stores' => [0],

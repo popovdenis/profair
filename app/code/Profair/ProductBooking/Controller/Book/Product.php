@@ -67,9 +67,10 @@ class Product extends Action
             return $resultForward;
         }
 
-        $successBlock = $this->layout->createBlock('Magento\Cms\Block\Block')->setBlockId('book_product_response');
+
+
         $result = [
-            'message' => $successBlock->toHtml()
+            'message' => $this->getSuccessResponse()
         ];
 
         return $this->getResponse()
@@ -78,5 +79,15 @@ class Product extends Action
             ->representJson(
                 $this->jsonSerializer->serialize($result)
             );
+    }
+
+    /**
+     * @return string
+     */
+    private function getSuccessResponse()
+    {
+        $successBlock = $this->layout->createBlock('Magento\Cms\Block\Block')->setBlockId('book_product_response');
+
+        return $successBlock->toHtml();
     }
 }

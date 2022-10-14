@@ -5,6 +5,11 @@ namespace Profair\ProductBooking\Controller\Adminhtml\Book;
 use Exception;
 use Profair\ProductBooking\Controller\Adminhtml\Book;
 
+/**
+ * Class Delete
+ *
+ * @package Profair\ProductBooking\Controller\Adminhtml\Book
+ */
 class Delete extends Book
 {
     public function execute()

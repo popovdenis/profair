@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Profair_ProductBooking::booking_service"
+             title="Profair Booking"
+             translate="title"
+             module="Profair_ProductBooking"
+             sortOrder="90"
+             parent="Magento_Backend::stores"
+             resource="Profair_ProductBooking::booking_service"/>
+
+        <add id="Profair_ProductBooking::profair_booking_list"
+             title="Profair Product Booking"
+             translate="title"
+             module="Profair_ProductBooking"
+             sortOrder="100"
+             parent="Profair_ProductBooking::booking_service"
+             action="profair_book_product/book"
+             resource="Profair_ProductBooking::profair_booking_list"/>
+    </menu>
+</config>

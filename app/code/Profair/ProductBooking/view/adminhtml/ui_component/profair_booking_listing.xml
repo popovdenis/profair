@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">profair_booking_listing.profair_booking_listing_data_source</item>
+            <item name="deps" xsi:type="string">profair_booking_listing.profair_booking_listing_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">profair_booking_listing_columns</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="add" class="Profair\ProductBooking\Block\Adminhtml\ProductBooking\Edit\Buttons\AddButton"/>
+        </buttons>
+    </settings>
+    <dataSource name="profair_booking_listing_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Profair\ProductBooking\Model\DataProvider\ProductBookingList</argument>
+            <argument name="name" xsi:type="string">profair_booking_listing_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="storageConfig" xsi:type="array">
+                        <item name="indexField" xsi:type="string">entity_id</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+    </dataSource>
+    <container name="listing_top">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="template" xsi:type="string">ui/grid/toolbar</item>
+                <item name="stickyTmpl" xsi:type="string">ui/grid/sticky/toolbar</item>
+            </item>
+        </argument>
+    </container>
+    <columns name="profair_booking_listing_columns">
+        <selectionsColumn name="ids">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="indexField" xsi:type="string">entity_id</item>
+                </item>
+            </argument>
+        </selectionsColumn>
+        <column name="entity_id" sortOrder="10">
+            <settings>
+                <label translate="true">ID</label>
+                <sorting>asc</sorting>
+            </settings>
+        </column>
+        <column name="phone_number" sortOrder="20">
+            <settings>
+                <label translate="true">Phone Number</label>
+            </settings>
+        </column>
+        <column name="status" component="Magento_Ui/js/grid/columns/select" sortOrder="30">
+            <settings>
+                <options class="Profair\ProductBooking\Model\Config\Source\Status"/>
+                <dataType>select</dataType>
+                <label translate="true">Booking Status</label>
+            </settings>
+        </column>
+        <actionsColumn name="actions" sortOrder="100"
+                       class="Profair\ProductBooking\Ui\Component\Listing\ProductBooking\Column\Action">
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+        </actionsColumn>
+    </columns>
+</listing>

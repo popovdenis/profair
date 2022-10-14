@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="profair_product_book" resource="default" engine="innodb" comment="Profair Product Booking Table">
+        <column xsi:type="int" name="entity_id" padding="10" unsigned="true" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="int" name="product_id" padding="10" nullable="false" default="0" unsigned="true"
+                comment="Product ID"/>
+        <column xsi:type="varchar" name="phone_number" nullable="false" length="64" comment="Phone Number"/>
+        <column xsi:type="varchar" name="status" length="150" nullable="false"
+                comment="Booking Status"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Create Booking Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Booking Time"/>
+        <constraint xsi:type="unique" referenceId="PROFAIR_PRODUCT_BOOK_PRODUCT_ID_PHONE_NUMBER">
+            <column name="product_id"/>
+            <column name="phone_number"/>
+        </constraint>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="PROFAIR_PRODUCT_BOOK_PRODUCT_ID_ENTITY_ID"
+                    table="profair_product_book"
+                    column="product_id"
+                    referenceTable="catalog_product_entity"
+                    referenceColumn="entity_id"
+                    onDelete="CASCADE"/>
+        <index referenceId="PROFAIR_PRODUCT_BOOK_PRODUCT_ID" indexType="btree">
+            <column name="product_id"/>
+        </index>
+        <index referenceId="PROFAIR_PRODUCT_BOOK_PHONE_NUMBER" indexType="btree">
+            <column name="phone_number"/>
+        </index>
+    </table>
+</schema>

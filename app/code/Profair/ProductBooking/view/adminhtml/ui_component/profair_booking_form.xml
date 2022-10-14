@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">profair_booking_form.profair_booking_form_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">General Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back" class="Profair\ProductBooking\Block\Adminhtml\ProductBooking\Edit\Buttons\Back"/>
+            <button name="delete" class="Profair\ProductBooking\Block\Adminhtml\ProductBooking\Edit\Buttons\Delete"/>
+            <button name="save" class="Profair\ProductBooking\Block\Adminhtml\ProductBooking\Edit\Buttons\Save"/>
+            <button name="save_and_continue"
+                    class="Profair\ProductBooking\Block\Adminhtml\ProductBooking\Edit\Buttons\SaveAndContinue"/>
+        </buttons>
+        <namespace>profair_booking_form</namespace>
+        <dataScope>data</dataScope>
+        <deps>
+            <dep>profair_booking_form.profair_booking_form_data_source</dep>
+        </deps>
+    </settings>
+    <dataSource name="profair_booking_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Profair\ProductBooking\Model\DataProvider\ProductBooking</argument>
+            <argument name="name" xsi:type="string">profair_booking_form_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">entity_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="submit_url" xsi:type="url" path="profair_book_product/book/save"/>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <fieldset name="general_fieldset">
+        <settings>
+            <label>General Settings</label>
+        </settings>
+        <field name="phone_number">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Phone Number</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="dataScope" xsi:type="string">phone_number</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="status">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Profair\ProductBooking\Model\Config\Source\Status</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Booking Status</item>
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="dataScope" xsi:type="string">status</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+    </fieldset>
+    <field name="updated_by" formElement="input">
+        <settings>
+            <elementTmpl>ui/form/element/text</elementTmpl>
+        </settings>
+    </field>
+</form>

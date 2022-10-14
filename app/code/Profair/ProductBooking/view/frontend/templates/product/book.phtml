@@ -1,5 +1,6 @@
 <?php
 /** @var $block \Profair\ProductBooking\Block\Product\BookProduct */
+$product = $block->getProduct();
 ?>
 <div class="rFormWrap">
     <div class="minform_order">
@@ -14,6 +15,7 @@
                 <label for="mobile_phone"></label>
                 <input id="mobile_phone" autocomplete="off" class="f122phone" type="text"
                        name="mobile_phone" placeholder="<?= __('Mobile phone') ?>*" data-validate="{required:true}">
+                <input id="product_sku" name="product_sku" type="hidden" value="<?= $product->getSku() ?>"/>
                 <div class="button">
                     <button class="action primary to-order"
                             title="<?= $block->escapeHtmlAttr(__('Book product by special price')) ?>"
@@ -28,7 +30,8 @@
     ".to-order": {
         "book-product": {
             "formContainer": "#profair-book-product",
-            "mobilePhoneElement": "#mobile_phone"
+            "mobilePhoneElement": "#mobile_phone",
+            "productSku": "<?= $product->getSku() ?>"
         }
     }
 }

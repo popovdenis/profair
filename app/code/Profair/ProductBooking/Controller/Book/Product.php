@@ -2,6 +2,8 @@
 
 namespace Profair\ProductBooking\Controller\Book;
 
+use Profair\ProductBooking\Api\Data\ProductBookingInterface;
+use Profair\ProductBooking\Api\ProductBookingRepositoryInterface;
 use Magento\Framework\App\Action\Action;
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\App\ResponseInterface;
@@ -29,26 +31,33 @@ class Product extends Action
      * @var \Magento\Framework\View\LayoutInterface
      */
     private $layout;
+    /**
+     * @var \Profair\ProductBooking\Api\ProductBookingRepositoryInterface
+     */
+    private $bookingRepository;
 
     /**
      * Product constructor.
      *
-     * @param \Magento\Framework\App\Action\Context               $context
-     * @param \Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
-     * @param \Magento\Framework\Serialize\Serializer\Json        $jsonSerializer
-     * @param \Magento\Framework\View\LayoutInterface             $layout
+     * @param \Magento\Framework\App\Action\Context                         $context
+     * @param \Magento\Framework\Controller\Result\ForwardFactory           $resultForwardFactory
+     * @param \Magento\Framework\Serialize\Serializer\Json                  $jsonSerializer
+     * @param \Magento\Framework\View\LayoutInterface                       $layout
+     * @param \Profair\ProductBooking\Api\ProductBookingRepositoryInterface $bookingRepository
      */
     public function __construct(
         Context $context,
         ForwardFactory $resultForwardFactory,
         Json $jsonSerializer,
-        LayoutInterface $layout
+        LayoutInterface $layout,
+        ProductBookingRepositoryInterface $bookingRepository
     )
     {
         parent::__construct($context);
         $this->resultForwardFactory = $resultForwardFactory;
         $this->jsonSerializer = $jsonSerializer;
         $this->layout = $layout;
+        $this->bookingRepository = $bookingRepository;
     }
 
     /**
@@ -67,7 +76,14 @@ class Product extends Action
             return $resultForward;
         }
 
+        $phone = $request->getParam('mobile_phone');
+        $sku = $request->getParam('product_sku');
 
+        $booking = $this->bookingRepository->getEntityFactory();
+        $booking->setPhoneNumber($phone);
+        $booking->setProductId(1);
+        $booking->setStatus(ProductBookingInterface::BOOKING_PRODUCT_STATUS_OPEN);
+        $this->bookingRepository->save($booking);
 
         $result = [
             'message' => $this->getSuccessResponse()

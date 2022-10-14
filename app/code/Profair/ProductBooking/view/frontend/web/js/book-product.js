@@ -9,7 +9,8 @@ define([
 
         options: {
             formContainer: '',
-            mobilePhoneElement: ''
+            mobilePhoneElement: '',
+            productSku: ''
         },
 
         ajaxRequestProcessing: ko.observable(false),

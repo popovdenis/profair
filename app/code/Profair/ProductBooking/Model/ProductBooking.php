@@ -46,17 +46,17 @@ class ProductBooking extends AbstractModel implements ProductBookingInterface
     /**
      * {@inheritdoc}
      */
-    public function getProductId(): ?int
+    public function getProductSku(): ?string
     {
-        return $this->getData(self::PRODUCT_ID);
+        return $this->getData(self::PRODUCT_SKU);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setProductId($productId): ProductBookingInterface
+    public function setProductSku($sku): ProductBookingInterface
     {
-        return $this->setData(self::PRODUCT_ID, $productId);
+        return $this->setData(self::PRODUCT_SKU, $sku);
     }
 
     /**

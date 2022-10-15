@@ -20,7 +20,7 @@ interface ProductBookingInterface
     /**
      * @var int
      */
-    const PRODUCT_ID = 'product_id';
+    const PRODUCT_SKU = 'product_sku';
     /**
      * @var string
      */
@@ -55,20 +55,20 @@ interface ProductBookingInterface
     public function setId($id): self;
 
     /**
-     * Return Product Id
+     * Return Product SKU
      *
-     * @return int|null
+     * @return string|null
      */
-    public function getProductId(): ?int;
+    public function getProductSku(): ?string;
 
     /**
-     * Set Product Id
+     * Set Product SKU
      *
-     * @param $productId
+     * @param $sku
      *
      * @return ProductBookingInterface
      */
-    public function setProductId($productId): self;
+    public function setProductSku($sku): self;
 
     /**
      * Return phone number

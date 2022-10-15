@@ -2,7 +2,7 @@
     "profair_product_book": {
         "column": {
             "entity_id": true,
-            "product_id": true,
+            "product_sku": true,
             "phone_number": true,
             "status": true,
             "created_at": true,

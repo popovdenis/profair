@@ -81,7 +81,7 @@ class Product extends Action
 
         $booking = $this->bookingRepository->getEntityFactory();
         $booking->setPhoneNumber($phone);
-        $booking->setProductId(1);
+        $booking->setProductSku($sku);
         $booking->setStatus(ProductBookingInterface::BOOKING_PRODUCT_STATUS_OPEN);
         $this->bookingRepository->save($booking);
 

@@ -15,7 +15,7 @@ class Delete extends Book
     public function execute()
     {
         // check if we know what should be deleted
-        $bookingId = $this->getRequest()->getParam('entity_id');
+        $bookingId = $this->getRequest()->getParam('id');
 
         /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();

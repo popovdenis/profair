@@ -14,6 +14,7 @@
                 <label for="mobile_phone"></label>
                 <input id="mobile_phone" autocomplete="off" class="f122phone" type="text"
                        name="mobile_phone" placeholder="<?= __('Mobile phone') ?>*" data-validate="{required:true}">
+                <input id="product_sku" name="product_sku" type="hidden" value="<?= $block->getProduct()->getSku() ?>"/>
                 <div class="button">
                     <button class="action primary to-order"
                             title="<?= $block->escapeHtmlAttr(__('Book product by special price')) ?>"

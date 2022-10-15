@@ -85,18 +85,10 @@ class Action extends Column
                 'href'    => $this->getDeleteUrl($item['entity_id']),
                 'label'   => __('Delete'),
                 'confirm' => [
-                    'title'   => __('Delete "${ $.$data.title }"'),
-                    'message' => __('Are you sure you want to delete: "${ $.$data.title }"?')
+                    'title'   => __('Delete "${ $.$data.product_sku }"'),
+                    'message' => __('Are you sure you want to delete: "${ $.$data.product_sku }"?')
                 ]
-            ],
-            'enable'   => [
-                'href'  => $this->getEnableUrl($item['entity_id']),
-                'label' => __('Enable')
-            ],
-            'disable'   => [
-                'href'  => $this->getDisableUrl($item['entity_id']),
-                'label' => __('Disable')
-            ],
+            ]
         ];
     }
 

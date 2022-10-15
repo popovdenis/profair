@@ -8,9 +8,7 @@ define([
     $.widget('profair.bookProduct', {
 
         options: {
-            formContainer: '',
-            mobilePhoneElement: '',
-            productSku: ''
+            formContainer: ''
         },
 
         ajaxRequestProcessing: ko.observable(false),

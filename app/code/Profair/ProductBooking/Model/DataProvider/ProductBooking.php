@@ -37,19 +37,6 @@ class ProductBooking extends AbstractDataProvider
      */
     private $pool;
 
-    /**
-     * ProductBooking constructor.
-     *
-     * @param                                                                              $name
-     * @param                                                                              $primaryFieldName
-     * @param                                                                              $requestFieldName
-     * @param \Profair\ProductBooking\Model\ResourceModel\ProductBooking\CollectionFactory $collectionFactory
-     * @param \Magento\Framework\App\Request\DataPersistorInterface                        $dataPersist
-     * @param \Profair\ProductBooking\Api\ProductBookingRepositoryInterface                $bookingRepository
-     * @param \Magento\Ui\DataProvider\Modifier\PoolInterface                              $pool
-     * @param array                                                                        $meta
-     * @param array                                                                        $data
-     */
     public function __construct(
         $name,
         $primaryFieldName,

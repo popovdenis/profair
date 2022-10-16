@@ -2,7 +2,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
     <router id="standard">
-        <route id="booking" frontName="booking">
+        <route id="profair_booking" frontName="profair_booking">
             <module name="Profair_ProductBooking"/>
         </route>
     </router>

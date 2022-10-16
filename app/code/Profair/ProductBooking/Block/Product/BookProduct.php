@@ -14,6 +14,6 @@ class BookProduct extends \Magento\Catalog\Block\Product\ListProduct
      */
     public function getActionUrl()
     {
-        return $this->getUrl('booking/book/product');
+        return $this->getUrl('profair_booking/book/product');
     }
 }

@@ -5,8 +5,7 @@
     <body>
         <referenceContainer name="content">
             <block class="Biren\Crudimage\Block\CrudimageView" name="crudimage.view"
-                   template="Biren_Crudimage::view.phtml" cacheable="false">
-            </block>
+                   template="Biren_Crudimage::view.phtml" cacheable="false" />
         </referenceContainer>
     </body>
 </page>

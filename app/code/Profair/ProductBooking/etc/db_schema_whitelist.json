@@ -3,19 +3,21 @@
         "column": {
             "entity_id": true,
             "product_sku": true,
-            "phone_number": true,
+            "contact_name": true,
+            "contact_phone": true,
+            "contact_email": true,
             "status": true,
             "created_at": true,
             "updated_at": true
         },
         "constraint": {
             "PRIMARY": true,
-            "PROFAIR_PRODUCT_BOOK_PRODUCT_ID_PHONE_NUMBER": true,
+            "PROFAIR_PRODUCT_BOOK_PRODUCT_SKU_CONTACT_PHONE": true,
             "PROFAIR_PRODUCT_BOOK_PRODUCT_ID_ENTITY_ID": true
         },
         "index": {
-            "PROFAIR_PRODUCT_BOOK_PRODUCT_ID": true,
-            "PROFAIR_PRODUCT_BOOK_PHONE_NUMBER": true
+            "PROFAIR_PRODUCT_BOOK_PRODUCT_SKU": true,
+            "PROFAIR_PRODUCT_BOOK_CONTACT_PHONE": true
         }
     }
 }

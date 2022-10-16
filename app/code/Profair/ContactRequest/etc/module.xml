@@ -4,6 +4,7 @@
     <module name="Profair_ContactRequest" setup_version="1.0.0">
         <sequence>
             <module name="Profair_Promotion"/>
+            <module name="Profair_ProductBooking"/>
         </sequence>
     </module>
 </config>

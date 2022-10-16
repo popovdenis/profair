@@ -62,22 +62,54 @@ class ProductBooking extends AbstractModel implements ProductBookingInterface
     /**
      * {@inheritdoc}
      */
-    public function getPhoneNumber(): ?string
+    public function getContactName(): ?string
     {
-        return $this->getData(self::PHONE_NUMBER);
+        return $this->getData(self::CONTACT_NAME);
     }
 
     /**
      * {@inheritdoc}
      */
-    public function setPhoneNumber($phoneNumber): ProductBookingInterface
+    public function setContactName($contactName): ProductBookingInterface
     {
-        return $this->setData(self::PHONE_NUMBER, $phoneNumber);
+        return $this->setData(self::CONTACT_NAME, $contactName);
     }
 
     /**
      * {@inheritdoc}
      */
+    public function getContactPhone(): ?string
+    {
+        return $this->getData(self::CONTACT_PHONE);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setContactPhone($contactPhone): ProductBookingInterface
+    {
+        return $this->setData(self::CONTACT_PHONE, $contactPhone);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getContactEmail(): ?string
+    {
+        return $this->getData(self::CONTACT_EMAIL);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setContactEmail($contactEmail): ProductBookingInterface
+    {
+        return $this->setData(self::CONTACT_EMAIL, $contactEmail);
+    }
+
+    /**
+ * {@inheritdoc}
+ */
     public function getStatus(): ?string
     {
         return $this->getData(self::STATUS);
@@ -89,6 +121,22 @@ class ProductBooking extends AbstractModel implements ProductBookingInterface
     public function setStatus($status): ProductBookingInterface
     {
         return $this->setData(self::STATUS, $status);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getRequestType(): ?string
+    {
+        return $this->getData(self::REQUEST_TYPE);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function setRequestType($requestType): ProductBookingInterface
+    {
+        return $this->setData(self::REQUEST_TYPE, $requestType);
     }
 
     /**

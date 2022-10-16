@@ -2,6 +2,7 @@
 
 namespace Profair\ContactRequest\Controller\Request;
 
+use Magento\Framework\Controller\Result\ForwardFactory;
 use Profair\ContactRequest\Model\ConfigProvider;
 use Profair\ContactRequest\Model\Mail\Sender;
 use Magento\Framework\App\Action\Context;
@@ -11,6 +12,8 @@ use Magento\Framework\DataObjectFactory as ObjectFactory;
 use Magento\Framework\Mail\Template\TransportBuilder;
 use Magento\Framework\Serialize\Serializer\Json;
 use Magento\Framework\View\LayoutInterface;
+use Profair\ProductBooking\Api\Data\ProductBookingInterface;
+use Profair\ProductBooking\Api\ProductBookingRepositoryInterface;
 
 /**
  * Class Send
@@ -47,17 +50,28 @@ class Send extends \Magento\Framework\App\Action\Action
      * @var \Profair\ContactRequest\Model\Mail\Sender
      */
     private $sender;
+    /**
+     * @var \Profair\ProductBooking\Api\ProductBookingRepositoryInterface
+     */
+    private $bookingRepository;
+    /**
+     * @var \Magento\Framework\Controller\Result\ForwardFactory
+     */
+    private $resultForwardFactory;
 
     /**
      * Send constructor.
      *
-     * @param \Magento\Framework\App\Action\Context             $context
-     * @param \Magento\Framework\Data\Form\FormKey\Validator    $formKeyValidator
-     * @param \Magento\Framework\DataObjectFactory              $objectFactory
-     * @param \Magento\Framework\Serialize\Serializer\Json      $serialize
-     * @param \Magento\Framework\View\LayoutInterface           $layout
-     * @param \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder
-     * @param \Profair\ContactRequest\Model\ConfigProvider        $configProvider
+     * @param \Magento\Framework\App\Action\Context                         $context
+     * @param \Magento\Framework\Data\Form\FormKey\Validator                $formKeyValidator
+     * @param \Magento\Framework\DataObjectFactory                          $objectFactory
+     * @param \Magento\Framework\Serialize\Serializer\Json                  $serialize
+     * @param \Magento\Framework\View\LayoutInterface                       $layout
+     * @param \Magento\Framework\Mail\Template\TransportBuilder             $transportBuilder
+     * @param \Profair\ContactRequest\Model\ConfigProvider                  $configProvider
+     * @param \Profair\ContactRequest\Model\Mail\Sender                     $sender
+     * @param \Magento\Framework\Controller\Result\ForwardFactory           $resultForwardFactory
+     * @param \Profair\ProductBooking\Api\ProductBookingRepositoryInterface $bookingRepository
      */
     public function __construct(
         Context $context,
@@ -67,7 +81,9 @@ class Send extends \Magento\Framework\App\Action\Action
         LayoutInterface $layout,
         TransportBuilder $transportBuilder,
         ConfigProvider $configProvider,
-        Sender $sender
+        Sender $sender,
+        ForwardFactory $resultForwardFactory,
+        ProductBookingRepositoryInterface $bookingRepository
     )
     {
         parent::__construct($context);
@@ -78,6 +94,8 @@ class Send extends \Magento\Framework\App\Action\Action
         $this->transportBuilder = $transportBuilder;
         $this->configProvider = $configProvider;
         $this->sender = $sender;
+        $this->resultForwardFactory = $resultForwardFactory;
+        $this->bookingRepository = $bookingRepository;
     }
 
     /**
@@ -85,14 +103,24 @@ class Send extends \Magento\Framework\App\Action\Action
      */
     public function execute()
     {
+        $request = $this->getRequest();
+
+        if (!$request->isAjax()) {
+            return $this->getJsonResponse([
+                'success' => false,
+                'message' => __('Bad request')
+            ]);
+        }
+
+        $booking = $this->getBookingEntity();
+        $this->bookingRepository->save($booking);
+
         $senderData = $this->objectFactory->create();
-        $senderData->setName($this->getRequest()->getParam('name'));
-        $senderData->setPhone($this->getRequest()->getParam('phone'));
-        $senderData->setEmail($this->getRequest()->getParam('email'));
+        $senderData->setName($booking->getContactName());
+        $senderData->setPhone($booking->getContactPhone());
+        $senderData->setEmail($booking->getContactEmail());
 
-        $recipientEmail = $this->configProvider->getRecipientEmail();
-
-        $this->sender->sendContactEmail($senderData, $recipientEmail);
+        $this->sender->sendContactEmail($senderData, $this->configProvider->getRecipientEmail());
 
         $successBlock = $this->layout->createBlock('Magento\Cms\Block\Block')->setBlockId('send_request_success');
         $resultObject = [
@@ -108,5 +136,17 @@ class Send extends \Magento\Framework\App\Action\Action
         return $this->getResponse()->representJson(
             $this->serialize->serialize($result)
         );
+    }
+
+    private function getBookingEntity()
+    {
+        $booking = $this->bookingRepository->getEntityFactory();
+        $booking->setContactName($this->getRequest()->getParam('name'));
+        $booking->setContactPhone($this->getRequest()->getParam('phone'));
+        $booking->setContactEmail($this->getRequest()->getParam('email'));
+        $booking->setStatus(ProductBookingInterface::BOOKING_PRODUCT_STATUS_OPEN);
+        $booking->setRequestType(ProductBookingInterface::REQUEST_TYPE_QUESTION);
+
+        return $booking;
     }
 }

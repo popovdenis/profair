@@ -57,16 +57,33 @@
                 <label translate="true">Product SKU</label>
             </settings>
         </column>
-        <column name="phone_number" sortOrder="30">
+        <column name="contact_name" sortOrder="30">
             <settings>
-                <label translate="true">Phone Number</label>
+                <label translate="true">Contact Name</label>
             </settings>
         </column>
-        <column name="status" component="Magento_Ui/js/grid/columns/select" sortOrder="40">
+        <column name="contact_phone" sortOrder="40">
+            <settings>
+                <label translate="true">Contact Phone</label>
+            </settings>
+        </column>
+        <column name="contact_email" sortOrder="50">
+            <settings>
+                <label translate="true">Contact Email</label>
+            </settings>
+        </column>
+        <column name="status" component="Magento_Ui/js/grid/columns/select" sortOrder="60">
             <settings>
                 <options class="Profair\ProductBooking\Model\Config\Source\Status"/>
                 <dataType>select</dataType>
                 <label translate="true">Booking Status</label>
+            </settings>
+        </column>
+        <column name="request_type" component="Magento_Ui/js/grid/columns/select" sortOrder="70">
+            <settings>
+                <options class="Profair\ProductBooking\Model\Config\Source\RequestType"/>
+                <dataType>select</dataType>
+                <label translate="true">Request Type</label>
             </settings>
         </column>
         <actionsColumn name="actions" sortOrder="100"

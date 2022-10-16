@@ -13,6 +13,9 @@ interface ProductBookingInterface
     const BOOKING_PRODUCT_STATUS_IN_PROGRESS = 'in_progress';
     const BOOKING_PRODUCT_STATUS_CLOSED = 'closed';
 
+    const REQUEST_TYPE_BOOKING = 'booking';
+    const REQUEST_TYPE_QUESTION = 'question';
+
     /**
      * @var int
      */
@@ -24,11 +27,23 @@ interface ProductBookingInterface
     /**
      * @var string
      */
-    const PHONE_NUMBER = 'phone_number';
+    const CONTACT_NAME = 'contact_name';
+    /**
+     * @var string
+     */
+    const CONTACT_PHONE = 'contact_phone';
+    /**
+     * @var string
+     */
+    const CONTACT_EMAIL = 'contact_email';
     /**
      * @var string
      */
     const STATUS = 'status';
+    /**
+     * @var string
+     */
+    const REQUEST_TYPE = 'request_type';
     /**
      * @var string
      */
@@ -71,20 +86,52 @@ interface ProductBookingInterface
     public function setProductSku($sku): self;
 
     /**
+     * Return contact name
+     *
+     * @return string|null
+     */
+    public function getContactName(): ?string;
+
+    /**
+     * Set contact name
+     *
+     * @param $contactName
+     *
+     * @return ProductBookingInterface
+     */
+    public function setContactName($contactName): self;
+
+    /**
      * Return phone number
      *
      * @return string|null
      */
-    public function getPhoneNumber(): ?string;
+    public function getContactPhone(): ?string;
 
     /**
-     * Set phone number
+     * Set contact phone
      *
-     * @param $phoneNumber
+     * @param $contactPhone
      *
      * @return ProductBookingInterface
      */
-    public function setPhoneNumber($phoneNumber): self;
+    public function setContactPhone($contactPhone): self;
+
+    /**
+     * Return contact email
+     *
+     * @return string|null
+     */
+    public function getContactEmail(): ?string;
+
+    /**
+     * Set contact email.
+     *
+     * @param $contactEmail
+     *
+     * @return ProductBookingInterface
+     */
+    public function setContactEmail($contactEmail): self;
 
     /**
      * Return booking status
@@ -101,6 +148,22 @@ interface ProductBookingInterface
      * @return ProductBookingInterface
      */
     public function setStatus($status): self;
+
+    /**
+     * Return request type
+     *
+     * @return string|null
+     */
+    public function getRequestType(): ?string;
+
+    /**
+     * Set request type
+     *
+     * @param $requestType
+     *
+     * @return ProductBookingInterface
+     */
+    public function setRequestType($requestType): self;
 
     /**
      * Return Created At
